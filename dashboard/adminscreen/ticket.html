@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Set Tickets</title>
+    <style>
+        .ticket-card {
+            background-color: rgb(255, 254, 254);
+            margin-top: 200px;
+            max-width: 400px;
+            margin-left: 500px;
+            color: aliceblue;
+        }
+
+        .ssd {
+            border: 1px solid #050505;
+            background-color: rgb(7, 7, 7);
+        }
+    </style>
+</head>
+
+<body>
+    <form id="set-ticket-form" class="ticket-card">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger" role="alert" id="errMsg">
+                </div>
+            </div>
+        </div>
+        <div class="card ssd">
+            <div class="card-body">
+                <h1 class="mt-5">TICKETS</h1>
+                <p>Enter the ticket type and price below :</p>
+                <div class="mb-3">
+                    <label for="ticket-type" class="form-label">Ticket Type:</label>
+                    <select class="form-select" id="type" name="type">
+                        <option value="vip">VIP</option>
+                        <option value="earlybird">Early Bird</option>
+                        <option value="group">Group</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="ticket-price" class="form-label">Ticket Price:</label>
+                    <input type="number" class="form-control" id="price" name="price" placeholder="$0.00" required>
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-primary" onclick="goBack()">Back</button>
+                    <button type="submit" class="btn btn-success">Set</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Success</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Ticket Created Successfully
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="backToUpdate()">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="ticket-set.js"></script>
+</body>
+
+</html>
